@@ -3,12 +3,15 @@ module demos
 go 1.19
 
 require (
+	github.com/go-sql-driver/mysql v1.7.1
 	google.golang.org/grpc v1.55.0
 	google.golang.org/protobuf v1.30.0
+	gopkg.in/ini.v1 v1.67.0
 )
 
 require (
 	github.com/golang/protobuf v1.5.3 // indirect
+	github.com/stretchr/testify v1.8.4 // indirect
 	golang.org/x/net v0.8.0 // indirect
 	golang.org/x/sys v0.6.0 // indirect
 	golang.org/x/text v0.8.0 // indirect

@@ -30,7 +30,7 @@ func main() {
 	// 3. 直接像调用本地方法一样调用Service中方法
 	resp, err := grpcServiceClient.ServiceMethodInvoke(context.Background(), &service.ServiceParam{ServiceParam1: 100, ServiceParam2: 10})
 	if err != nil {
-		log.Fatal("调用gRPC方法错误: ", err)
+		log.Fatal("Error calling gRPC method: ", err)
 	}
 
 	fmt.Printf("获取取服务器中的参数1: %v,获取取服务器中的参数2: %v\n", resp.GetClientParam1(), resp.GetClientParam2())

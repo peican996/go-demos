@@ -13,7 +13,7 @@ func main() {
 
 	listener, err := net.Listen("tcp", ":8002")
 	if err != nil {
-		log.Fatal("服务监听端口失败", err)
+		log.Fatal("Failed to listen on port", err)
 	}
 	_ = server.Serve(listener)
 }
