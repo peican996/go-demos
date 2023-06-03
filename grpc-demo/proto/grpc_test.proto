@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option go_package = "../test";
+
+package grpc_test;
+
+// 定义request model
+message ServiceParam{
+  int32 service_param1 = 1;
+  int32 service_param2 = 2;
+}
+
+// 定义response model
+message ClientParam{
+  int32 client_param1 = 1;
+  int32 client_param2 = 2;
+}
+
+// 定义服务主体
+service TestService{
+  // 定义方法
+  rpc ServiceMethodInvoke(ServiceParam) returns(ClientParam);
+}
