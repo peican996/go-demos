@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option go_package = "./students";
+
+package students;
+
+message Student {
+  string id = 1;
+  string name = 2;
+  int32 age = 3;
+  string gender = 4;
+  string student_number = 5;
+  string grade = 6;
+}
+
+service QueryService {
+  rpc GetStudents(QueryRequestInfo) returns (QueryResponse);
+}
+
+message QueryRequestInfo {
+  string Info = 1;
+}
+
+message QueryResponse {
+  repeated Student students = 1;
+}

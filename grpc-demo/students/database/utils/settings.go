@@ -2,7 +2,6 @@ package utils
 
 import (
 	"log"
-	"path/filepath"
 
 	"gopkg.in/ini.v1"
 )
@@ -19,7 +18,7 @@ func Init() {
 	relativePath := "database-demo/conf/config.ini"
 	file, err := ini.Load(relativePath)
 	if err != nil {
-		log.Fatalln("配置文件读取错误，请检查文件路径: ", any(filepath.Abs(relativePath)), err)
+		log.Fatalf("配置文件读取错误，请检查文件路径: %v, ", err)
 	}
 	LoadDBData(file)
 }
