@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "./doubleStream";
+
+service MyService {
+  rpc MyMethod(stream Request) returns (stream Response) {}
+}
+
+message Request {
+  string data = 1;
+}
+
+message Response {
+  string result = 1;
+}
