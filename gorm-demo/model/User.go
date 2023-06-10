@@ -19,12 +19,15 @@ type User struct {
 	UpdatedAt    time.Time    `gorm:"column:UpdatedAt"`
 }
 
-func CreateUser(data *User) int {
-	databaseUtils.Init()
+func init() {
+	log.Println("初始化数据库连接！！！")
 	databaseUtils.InitDb()
+}
+
+func CreateUser(data *User) int {
 	db := databaseUtils.DB.Table("users").Create(&data)
 	if db.Error != nil {
-		log.Fatalln("database error!!!!")
+		log.Fatalln(db.Error.Error())
 	}
 	return int(db.RowsAffected)
 }

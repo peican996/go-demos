@@ -14,7 +14,7 @@ var (
 	DbName     string
 )
 
-func Init() {
+func init() {
 	relativePath := "gorm-demo/config/config.ini"
 	file, err := ini.Load(relativePath)
 	if err != nil {
