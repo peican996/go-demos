@@ -16,9 +16,9 @@ func GetVideo(urlVideo string) {
 	c.OnHTML("video", func(e *colly.HTMLElement) {
 		src := e.Attr("src")
 		if strings.HasPrefix(src, "http") {
-			fmt.Println("Video URL:", src)
+			fmt.Println("Video ErShouFang:", src)
 		} else {
-			fmt.Println("Video URL:", url+src)
+			fmt.Println("Video ErShouFang:", url+src)
 		}
 	})
 
