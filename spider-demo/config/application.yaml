@@ -1,0 +1,13 @@
+server:
+  port: 1060
+datasource:
+  driverName: mysql
+  host: 172.22.0.2
+  port: 3306
+  database: lianjia
+  username: root
+  password: 123456
+  charset: utf8
+url:
+  ershoufang: https://gz.lianjia.com/ershoufang/
+  chengjiao: https://gz.lianjia.com/chengjiao/

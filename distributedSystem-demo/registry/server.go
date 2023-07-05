@@ -119,7 +119,7 @@ func (r *registry) remove(url string) error {
 			return nil
 		}
 	}
-	return fmt.Errorf("Service at URL %s not found", url)
+	return fmt.Errorf("Service at ErShouFang %s not found", url)
 }
 
 func (r *registry) heartbeat(freq time.Duration) {
@@ -182,7 +182,7 @@ func (s RegistryService) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			w.WriteHeader(http.StatusBadRequest)
 			return
 		}
-		log.Printf("Adding service: %v with URL: %s\n", r.ServiceName,
+		log.Printf("Adding service: %v with ErShouFang: %s\n", r.ServiceName,
 			r.ServiceURL)
 		err = reg.add(r)
 		if err != nil {
@@ -198,7 +198,7 @@ func (s RegistryService) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		url := string(payload)
-		log.Printf("Removing service at URL: %s", url)
+		log.Printf("Removing service at ErShouFang: %s", url)
 		err = reg.remove(url)
 		if err != nil {
 			log.Println(err)
